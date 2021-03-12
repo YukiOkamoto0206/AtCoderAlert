@@ -8,9 +8,8 @@ response = requests.get(url)
 
 # スクレイピング
 soup = BeautifulSoup(response.content, "html.parser")
-# elems = soup.find_all("span", "user-blue")
-# elems = soup.find_all("div", "contest-table-permanent") これしたい
-elems = soup.find_all("div", "panel panel-default")
+# 予定されたコンテスト
+elems = soup.select("#contest-table-upcoming")
 
 
 print(elems)
