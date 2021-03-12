@@ -8,8 +8,9 @@ response = requests.get(url)
 
 # スクレイピング
 soup = BeautifulSoup(response.content, "html.parser")
+
 # 予定されたコンテスト
-elems = soup.select("#contest-table-upcoming")
+elems = soup.select("#contest-table-upcoming a")
 
-
-print(elems)
+for elem in elems:
+    print(elem.get_text())
