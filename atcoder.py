@@ -7,7 +7,7 @@ import datetime
 
 def send_line_notify(notification_message):
     # LINEに通知する
-    line_notify_token = '1Xvp4MDPkzvJ4g4U7YqYQS3P6WgkUCXLY951FkiCtuq'
+    line_notify_token = 'TOKEN'
     line_notify_api = 'https://notify-api.line.me/api/notify'
     headers = {'Authorization': f'Bearer {line_notify_token}'}
     data = {'message': '\n' + notification_message}
@@ -16,7 +16,7 @@ def send_line_notify(notification_message):
 
 def send_slack_notify(notification_message):
     # slackに通知する
-    SLACK_URL = 'https://hooks.slack.com/services/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'
+    SLACK_URL = 'URL'
     slack = slackweb.Slack(SLACK_URL)
     slack.notify(text = notification_message)
 
